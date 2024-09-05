@@ -6,7 +6,7 @@ message = custom_message.CustomMessage(
 
 data = type(message).to_dict(
     message,
-    including_default_value_fields=False,
+    always_print_fields_with_no_presence=False,
 )
 
 print(data)
