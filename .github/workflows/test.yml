@@ -4,7 +4,7 @@ on: push
 
 jobs:
   run:
-    name: Python 3.12 on ${{ startsWith(matrix.os, 'macos-') && 'macOS' || startsWith(matrix.os, 'windows-') && 'Windows' || 'Linux' }}
+    name: Python 3.12 on ${{ startsWith(matrix.os, 'macos-') && 'macOS' || startsWith(matrix.os, 'windows-') && 'Windows' || 'Linux' }} with ${{ matrix.requirements }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
