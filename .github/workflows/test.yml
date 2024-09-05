@@ -10,6 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        requirements: [good_requirements.txt, bad_requirements.txt]
 
     steps:
       - name: Support longpaths
@@ -25,7 +26,7 @@ jobs:
           python-version: 3.12
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ${{ matrix.requirements }}
 
       - name: Run tests
         run: python test.py
